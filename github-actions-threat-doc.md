@@ -28,4 +28,10 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
        ```
      - Swtich back to your user role before making the git path changes
 - Follow the rest of steps as is
+
+## Setting up Python build 
+ - Using the `actions/setup-python` at [here](https://github.com/marketplace/actions/setup-python) for getting the environment ready 
+   - Github hosted images have Python already installed 
+   - Scripts for self-hosted runners are available from `@v2` - make sure you checkout from this version onwards to automatically setup for self-hosted runners
+ - Make sure you use the version matrix with the [Python versions specified](https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json) by github team
      
