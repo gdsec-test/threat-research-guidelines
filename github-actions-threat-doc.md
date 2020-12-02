@@ -26,4 +26,5 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
        ```sh
        sudo su github-actions
        ```
+     - Swtich back to your user role before making the git path changes
      
