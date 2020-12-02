@@ -29,6 +29,10 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
      - Swtich back to your user role before making the git path changes
 - Follow the rest of steps as is
 
+## Starting with actions 
+- Check out [gdcorp-cp/gd-actions-starter-workflows](https://github.com/gdcorp-cp/gd-actions-starter-workflows)
+- For GoDaddy specific inhouse build actions checkout [gdcorp-cp/gd-actions](https://github.com/gdcorp-cp/gd-actions)
+
 ## Setting up Python build 
  - Using the `actions/setup-python` at [here](https://github.com/marketplace/actions/setup-python) for getting the environment ready 
    - Github hosted images have Python already installed 
