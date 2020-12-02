@@ -10,7 +10,7 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
        done;
      ```
   - Not installing docker at the moment. Can be downloaded when we are using Actions that require docker.
-- Before Step 3, make sure you haev required access for your repository, for `Actions` to be visible under 'Settings' tab. If you working on forked repos/ make sure the access is granted under `Actions` tab on top.
+- Before Step 3, make sure you have required access for your repository, for `Actions` to be visible under 'Settings' tab. If you working on forked repos/ make sure the access is granted under `Actions` tab on top.
 - Follow instructions for Step 3
 - For Step 4, before running the `config.sh`, change directory
 
@@ -31,7 +31,7 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
 
 ## Starting with actions 
 - Check out [gdcorp-cp/gd-actions-starter-workflows](https://github.com/gdcorp-cp/gd-actions-starter-workflows)
-- For GoDaddy specific inhouse build actions checkout [gdcorp-cp/gd-actions](https://github.com/gdcorp-cp/gd-actions)
+- For GoDaddy specific inhouse built actions checkout [gdcorp-cp/gd-actions](https://github.com/gdcorp-cp/gd-actions)
 
 ## Setting up Python build 
  - Using the `actions/setup-python` at [here](https://github.com/marketplace/actions/setup-python) for getting the environment ready 
