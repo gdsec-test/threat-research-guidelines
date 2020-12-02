@@ -12,12 +12,18 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
   - Not installing docker at the moment. Can be downloaded when we are using Actions that require docker.
 - Before Step 3, make sure you haev required access for your repository, for `Actions` to be visible under 'Settings' tab. If you working on forked repos/ make sure the access is granted under `Actions` tab on top.
 - Follow instructions for Step 3
-- For Step 4, before running the `config.sh`, change directory and switch role
+- For Step 4, before running the `config.sh`, change directory
 
    ```sh 
        cd /usr/local/bin/actions-runner 
-       sudo su github-actions
     ```
     - Run the `config.sh` command
-    - You will be prompted to `sudo` install some dependency. Switch role back to your user(not `github-actions`) to perform that and switch again to `github-actions` for `config.sh`
+    - You will be prompted to `sudo` install dependency
+      ```sh
+      sudo ./bin/installdependencies.sh
+      ```
+     - Switch role to perform the `config.sh`
+       ```sh
+       sudo su github-actions
+       ```
      
