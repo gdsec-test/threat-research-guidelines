@@ -38,4 +38,6 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
    - Github hosted images have Python already installed 
    - Scripts for self-hosted runners are available from `@v2` - make sure you checkout from this version onwards to automatically setup for self-hosted runners
  - Make sure you use the version matrix with the [Python versions specified](https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json) by github team
+   - Python Self hosted runners are supported only for ubuntu, windows, macOS
+     - See for docker containers or set up python by your own actions
      
