@@ -36,8 +36,16 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
 ## Setting up Python build 
  - Using the `actions/setup-python` at [here](https://github.com/marketplace/actions/setup-python) for getting the environment ready 
    - Github hosted images have Python already installed 
-   - Scripts for self-hosted runners are available from `@v2` - make sure you checkout from this version onwards to automatically setup for self-hosted runners
- - Make sure you use the version matrix with the [Python versions specified](https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json) by github team
+   - Scripts for self-hosted runners are available from `@v2` - make sure you checkout from this version(SHA recommended) onwards to automatically setup for self-hosted runners
+ - Make sure you use the version matrix only from the [Python versions specified](https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json) by github team
    - Python Self hosted runners are supported only for ubuntu, windows, macOS
      - See for docker containers or set up python by your own actions
+
+## Setting up Go build 
+ - Using the `actions/setup-go` at [here](https://github.com/actions/setup-go)
+   - Can be run on github hosted/ self hosted unlike python dependency 
+   - ThreatAPI uses self-hosted as we are pulling [threat/util](https://github.secureserver.net/threat/util) dependency. Since this repo is within GD network and code wasn't scanned with tartufo, this code cannot be checked onto github hosted runners for building. Once we move away from that dependency we can use github hosted runners.
+
+## Staying up to date with SHA commits
+ - We are using dependabot under `.github/` under our repository with `package-ecosystem: "github-actions"` to stay up to date with SHA versions for dependencies that we use. This bot creates a PR when a new SHA is detected from the dependency. (TODO: Check if the dependabot is applicable to GD repositories as well)
      
