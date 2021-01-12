@@ -1,6 +1,8 @@
 ThreatApi code has dependencies being pulled from github.secureserver.net
 
-We are setting up the CICD pipeline with self-hosted runners because of this dependency.
+We are setting up the CICD pipeline with self-hosted runners because of this dependency for GoLang. Rest runs on Github hosted runners.
+We have a max run time of 50k billable mins/ month for entire GoDaddy. Currently, there is no restriction on using the mins as there is very less adoption of Github actions within company.
+
 
 ## Setting up self-hosted runners
 - Follow instructions on [setting up on-prem openstack](https://github.secureserver.net/CTO/guidelines/blob/master/Standards-Best-Practices/CICD/GitHubActions.md#setting-up-a-self-hosted-github-actions-runner-on-on-prem-openstack) for points 1 & 2
@@ -9,6 +11,15 @@ We are setting up the CICD pipeline with self-hosted runners because of this dep
        for ip in `cat /etc/resolv.conf | grep nameserver | cut -d " " -f2`; do sudo iptables -I OUTPUT 1 -p udp -d $ip --dport 53 -m state --state NEW,ESTABLISHED -j ACCEPT;
        done;
      ```
+     
+## Threat Team's Self Hosted machine 
+#### On Github Cloud
+- Tied to Repository `gdcorp-infosec/threat-api`
+- Can be found under `Settings -> Actions -> Self-hosted Runners`
+- Named as `github-actions-threatapiv2`
+#### On Openstack
+- Available under Project `threatapi-v2-prod` 
+- Named as `github-actions`
 
 ## Starting with actions 
 - Check out [gdcorp-cp/gd-actions-starter-workflows](https://github.com/gdcorp-cp/gd-actions-starter-workflows)
